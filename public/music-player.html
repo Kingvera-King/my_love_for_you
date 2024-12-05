@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Music Player</title>
+</head>
+<body>
+  <!-- Hidden Audio Element -->
+  <audio id="background-music" loop>
+    <source src="audio/love-song.mp3" type="audio/mpeg">
+    Your browser does not support the audio element.
+  </audio>
+
+  <script>
+    const music = document.getElementById('background-music');
+
+    // Load playback state from localStorage
+    if (localStorage.getItem('isPlaying') === 'true') {
+      music.currentTime = localStorage.getItem('currentTime') || 0;
+      music.play();
+    }
+
+    // Save playback position periodically
+    music.addEventListener('timeupdate', () => {
+      localStorage.setItem('currentTime', music.currentTime);
+    });
+
+    // Listen for messages from the main page
+    window.addEventListener('message', (event) => {
+      if (event.data === 'play') {
+        music.play();
+        localStorage.setItem('isPlaying', 'true');
+      } else if (event.data === 'pause') {
+        music.pause();
+        localStorage.setItem('isPlaying', 'false');
+      } else if (event.data === 'restart') {
+        music.currentTime = 0;
+        music.play();
+        localStorage.setItem('isPlaying', 'true');
+      } else if (event.data.command === 'volume') {
+        music.volume = event.data.value; // Adjust volume
+      }
+    });
+  </script>
+</body>
+</html>

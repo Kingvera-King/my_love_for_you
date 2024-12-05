@@ -1,0 +1,135 @@
+body {
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background: linear-gradient(135deg, #ff6ec4, #7873f5);
+    font-family: 'Poppins', sans-serif;
+    overflow: hidden;
+  }
+
+  /* Custom Cursor Styling */
+body, button, a {
+  cursor: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24"><text y="20" font-size="20">❤️</text></svg>'), auto;
+}
+
+@font-face {
+    font-family: 'Love Light';
+    src: url('/assets/fonts/lovelight.ttf') format('truetype'); /* Adjust file path if needed */
+    font-weight: normal;
+    font-style: normal;
+  }
+  
+
+  /* Animation Background */
+  @keyframes gradient {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+  }
+  
+  body {
+    background-size: 200% 200%;
+    animation: gradient 8s ease infinite;
+  }
+  
+  .container {
+    text-align: center;
+    color: white;
+    animation: fadeIn 3s ease;
+  }
+  
+  /* "My Love for You" Title */
+/* "My Love for You" Title */
+h1 {
+    font-size: 8rem;
+    font-weight: 900;
+    text-shadow: 0 4px 8px rgba(0, 0, 0, 0.3), 0 0 20px rgba(205, 30, 30, 0.8);
+    margin: 0;
+    padding: 0;
+    letter-spacing: 3px;
+    animation: glow 2s ease-in-out infinite; }/* Add bounce here */
+
+  
+  @keyframes glow {
+    0% { text-shadow: 0 0 10px rgba(255, 255, 255, 0.7), 0 0 20px rgba(255, 0, 255, 0.8); }
+    100% { text-shadow: 0 0 20px rgba(255, 255, 255, 1), 0 0 40px rgba(255, 0, 255, 1); }
+  }
+  
+  /* "Dear Valeria" Subheading */
+  h2 {
+    font-size: 3rem;
+    color: #330c5f;
+    text-shadow: 0 0 8px rgba(255, 255, 255, 0.9), 0 0 15px rgba(255, 223, 108, 1);
+    margin: 20px 0;
+    animation: bounce 2s infinite;
+  }
+  
+  @keyframes bounce {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-15px); }
+  }
+  
+  /* Paragraph Styling */
+  p {
+    font-size: 1.5rem;
+    line-height: 2rem;
+    color: rgba(255, 255, 255, 0.8);
+    margin: 20px;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+    background: rgba(0, 0, 0, 0.3);
+    padding: 15px;
+    border-radius: 10px;
+    animation: popIn 2s ease-in-out;
+    font-family: 'Love Light', cursive;
+  }
+  
+  @keyframes popIn {
+    0% { transform: scale(0.8); opacity: 0; }
+    100% { transform: scale(1); opacity: 1; }
+  }
+  
+  /* Fancy Heart Icon Animation */
+  .heart {
+    font-size: 4rem;
+    color: #570838;
+    margin: 20px 0;
+    animation: heartbeat 1.5s ease-in-out infinite;
+  }
+  
+  @keyframes heartbeat {
+    0%, 100% { transform: scale(1); }
+    50% { transform: scale(1.2); }
+  }
+  
+
+  /* Button to Make It Extra Special */
+  button {
+    background: #d4b1d7;
+    color: rgb(0, 0, 0);
+    border: none;
+    border-radius: 50px;
+    padding: 15px 30px;
+    font-size: 1.5rem;
+    font-weight: bold;
+    cursor: pointer;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2), 0 0 10px rgba(222, 129, 186, 0.8);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+  
+  button:hover {
+    transform: scale(1.1);
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.3), 0 0 20px rgb(67, 22, 22);
+  }
+  
+  button:active {
+    transform: scale(1);
+  }
+  
+  /* Fade-in Animation */
+  @keyframes fadeIn {
+    0% { opacity: 0; transform: translateY(20px); }
+    100% { opacity: 1; transform: translateY(0); }
+  }
